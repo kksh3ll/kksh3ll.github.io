@@ -1,9 +1,6 @@
 ---
 layout: docs
-title: 插件
-prev_section: assets
-next_section: extras
-permalink: /docs/plugins/
+title: 我的第一篇测试文章
 contributor: debbbbie
 ---
 
