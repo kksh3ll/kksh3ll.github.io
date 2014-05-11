@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: post
 title: 我的第一篇测试文章
 contributor: debbbbie
 ---
