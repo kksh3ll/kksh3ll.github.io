@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  ”Java的反射机制”
+title:  Java的反射机制
 date:   2016-05-11 20:23:12
 categories: Java update
 ---
@@ -14,6 +14,7 @@ categories: Java update
  * 生成动态代理
 
 2. 反射机制的相关API
+
  * 获得对象的包名和类名
 
   {% highlight Java %}
@@ -66,7 +67,7 @@ categories: Java update
    }
  }
  {% endhighlight %}
- 
+
  * 反射机制的动态代理
  通过反射来生成一个代理，分三步：
  1. new出代理对象，通过实现InvacationHandler接口，然后new出代理对象来。
@@ -77,7 +78,8 @@ categories: Java update
     private Object obj = null;
     public Object bind(Object obj) {
         this.obj = obj;
-        return Proxy.newProxyInstance(obj.getClass().getClassLoader(), obj.getClass().getInterfaces(), this);
+        return Proxy.newProxyInstance(obj.getClass().getClassLoader(),
+         obj.getClass().getInterfaces(), this);
     }
     public Object invoke(Object proxy, Method method, Object[] args){
         Object temp = method.invoke(this.obj, args);
