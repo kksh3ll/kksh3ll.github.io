@@ -19,7 +19,7 @@ categories: Java update
   {% highlight Java %}
   package com.github.test;
   public class Test {
-    public static void main(String[] args)
+    public static void main(String[] args){
       Test test = new Test();
       System.out.println(test.getClass().getName());
   }
@@ -53,6 +53,7 @@ categories: Java update
       System.out.println(type.getName() + " " + field[i].getName());
   }
   {% endhighlight %}
+
  {% highlight Java %}
  public static void main(){
    Class<?> clazz = Class.forName("com.gethub.test.Test");
