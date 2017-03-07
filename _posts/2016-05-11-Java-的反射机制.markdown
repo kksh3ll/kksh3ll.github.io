@@ -44,6 +44,8 @@ categories: Java update
          System.out.println(")");
      }
  }
+ {% endhighlight %}
+
  * 获取某各类的属性和方法
   {% highlight Java %}
   public static void main(String[] args){
@@ -64,6 +66,7 @@ categories: Java update
    }
  }
  {% endhighlight %}
+ 
  * 反射机制的动态代理
  通过反射来生成一个代理，分三步：
  1. new出代理对象，通过实现InvacationHandler接口，然后new出代理对象来。
