@@ -12,15 +12,15 @@ categories: Java update
  即如果对list增加和删除较多，优先使用`LinkedList`；如果查询较多，则推荐使用`ArrayList`。
 
 2. 对list的复制有俩种方法，一种是使用`ArrayList`构造器。
-{% highlight Java %}
-ArrayList<String> newList = new ArrayList<String>(list);
-{% endhighlight %}
+ {% highlight Java %}
+ ArrayList<String> newList = new  ArrayList<String>(list);
+ {% endhighlight %}
 
  另一种使用`Collections.copy()`。
 
-3. 删除`ArrayList`中的重复元素，可以将list放入set中来删除重复元素，然后再放回list中
-{% highlight Java %}
-Set<String> set = new HashSet<String>(list);
-list.clear();
-list.addAll(set);
-{% endhighlight %}
+3. 删除`ArrayList`中的重复元素，可以将list放入set中来删除 重复元素，然后再放回list中
+ {% highlight Java %}
+ Set<String> set = new HashSet<String>(list);
+ list.clear();
+ list.addAll(set);
+ {% endhighlight %}
