@@ -18,7 +18,7 @@ categories: Java update
 
  另一种使用`Collections.copy()`。
 
-3. 删除`ArrayList`中的重复元素，可以将list放入set中来删除 重复元素，然后再放回list中
+3. 删除`ArrayList`中的重复元素，可以将list放入set中来删除 重复元素，然后再放回list中。
  {% highlight Java %}
  Set<String> set = new HashSet<String>(list);
  list.clear();
