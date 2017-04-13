@@ -12,7 +12,6 @@ categories: Java
 ## 官方给出的配置文件 `generatorConfig.xml`
 
 {% highlight javascript %}
-<xml>
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE generatorConfiguration
   PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
@@ -55,7 +54,6 @@ categories: Java
 
   </context>
 </generatorConfiguration>
-</xml>
 {% endhighlight %}
 
 其中`targetProject`的值在使用eclipse插件的时候之间填写项目名，填写相对路径和绝对路径是不会生成代码，但是既不会报错也不会显示相关的日志。我在这个坑上浪费了很长时间。
