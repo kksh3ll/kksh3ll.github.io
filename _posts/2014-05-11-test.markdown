@@ -135,7 +135,7 @@ module Jekyll
 end
 {% endhighlight %}
 
-![xxx] (http://7d9lj9.com1.z0.glb.clouddn.com/images/102244.jpg)
+![xxx] (../img/102244.jpg)
 <div class="note info">
   <h5>期待你的作品</h5>
   <p>
