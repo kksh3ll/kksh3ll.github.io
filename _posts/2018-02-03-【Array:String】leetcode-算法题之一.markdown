@@ -13,7 +13,7 @@ categories: Java
 
 1. 暴力破解法：
 
-	* 时间复杂度：O(n^2)
+	* 时间复杂度：O(\n^2)
 	* 空间复杂度：O(1)
 
 2. Hash table
