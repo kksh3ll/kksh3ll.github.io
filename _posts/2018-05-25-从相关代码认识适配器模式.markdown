@@ -11,7 +11,7 @@ categories: Java
 
 适配器模式在应用的场景中，一是系统需要使用现有的类，而这个类的接口不符合要求，二是想建立一个可重用的类，与一些彼此没有关联的类一起工作，这些类不一定有一致的接口。这个时候可以考虑使用适配器模式来进行开发。
 
-![img](/img/adapter20180525.png){:width="800"}
+![img](/img/adapter20180525.png)
 
 
 - 优点：可以让任何两个没有关联的类一起运行、提高了类的复用并且灵活性好。
@@ -26,7 +26,7 @@ IDEA中源码许多部分都使用了这种结构，对其中的部分源码进�
 
 类图如下：
 
-![img](/img/LookupAdapter180902.jpg)
+![img](/img/LookupAdapter180902.jpg){:width="800"}
 
 LookupAdapter抽象类实现LookupListener接口，也就是LookupListener的接口适配器，空实现了接口的所有方法。
 
