@@ -46,7 +46,7 @@ public abstract class LookupAdapter implements LookupListener{
 }
 {% endhighlight %}
 
-程序里的匿名内部类是MyLookuplistener类，只监听了itemSelected方法。
+程序里的匿名内部类只监听了itemSelected方法。
 
 {% highlight Java %}
 private void showLookup(@NotNull Project project, @NotNull Editor editor) {
