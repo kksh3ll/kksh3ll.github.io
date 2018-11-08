@@ -25,7 +25,7 @@ Tomcat的入口main方法在org.apache.catalina.startup.Bootstrap中，Bootstrap
 
 Containner一共有4个子接口Engine、Host、Context、Wrapper和一个默认实现类ContainnerBase，每个子接口都是一个容器，这4个字容器有一个对应的StandardXXX实现类，并且这些实现类都继承ContainnerBase类。通常使用的Servlet封装在Wrapper中。
 
-![img](/img/containner20180626.jpg)
+![img](/img/containner20180626.jpg){:width="800"}
 
 - Engine管理多个Host，一个Service只能有一个Engine
 
