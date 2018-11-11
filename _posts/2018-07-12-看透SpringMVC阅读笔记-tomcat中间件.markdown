@@ -100,7 +100,7 @@ ProtocolHandler有3个重要的组件：
 
 - `Adapter` 用于将封装好的Request交给Containner进行具体处理
 
-![img](/img/conncetor20180626.jpg)
+![img](/img/connector20180626.jpg)
 
 `ProtocolHandler`接口的抽象实现类`AbstractProtocol`分2种类型`Ajp`和`HTTP`，默认配置中的`org.apache.coyote.http11.Http11NioProtocol`使用HTTP1.1协议，TCP层使用`NioSocket`来传输数据。
 
