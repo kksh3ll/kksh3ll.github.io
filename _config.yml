@@ -8,3 +8,5 @@ url: "http://kksh3ll.github.io"
 # Build settings
 markdown: kramdown
 permalink: pretty
+paginate: 10
+paginate_path: "blog/page:num"
