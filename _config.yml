@@ -9,4 +9,4 @@ url: "http://kksh3ll.github.io"
 markdown: kramdown
 permalink: pretty
 paginate: 10
-paginate_path: "kksh3ll.github.io/page:num"
+paginate_path: "blog/page:num"
