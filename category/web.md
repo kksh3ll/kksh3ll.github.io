@@ -1,6 +1,6 @@
 ---
 layout: posts_by_category
 categories: web
-title: Web
+title: web
 permalink: /category/web
 ---
