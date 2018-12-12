@@ -2,7 +2,7 @@
 layout: post
 title:  Java中Iterator的用法
 date:   2015-04-12
-categories: update
+categories: [Java]
 ---
 
 ## 迭代器

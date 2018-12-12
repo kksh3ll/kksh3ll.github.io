@@ -2,7 +2,7 @@
 layout: post
 title:  HashMap和HashTable的区别
 date :  2015-04-15 19:48:12
-categories: Java
+categories: [Java]
 ---
 
 ## HashMap 不是线程安全的

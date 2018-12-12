@@ -2,7 +2,7 @@
 layout: post
 title : s:textfield等struts-tags去掉自动生成的tr和td标签
 date  : 2015-06-12 23:15:45
-categories: Java
+categories: [Java]
 ---
 
 * 在使用struts2的时候发现如果按照默认的方式使用<s:textfield>标签，会自动加上<tr><td>标签，比如

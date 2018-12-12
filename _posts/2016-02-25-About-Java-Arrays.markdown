@@ -2,7 +2,7 @@
 layout: post
 title:  关于Java中的数组
 date :  2016-02-25 20:34:25
-categories: Java update
+categories: [Java]
 ---
 ## 什么是数组
 

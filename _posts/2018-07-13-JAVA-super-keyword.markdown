@@ -2,7 +2,7 @@
 layout: post
 title: JAVA中的super关键字
 date: 2018-07-13
-categories: Java
+categories: [Java]
 ---
 
 ## 子类构造方法中的super()或者super(args)

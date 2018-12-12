@@ -2,7 +2,7 @@
 layout: post
 title: Oracle数据库中新建表空间及添加用户
 date: 2017-06-03
-categories: Oracle
+categories: [Oracle]
 ---
 
 ## 创建表空间

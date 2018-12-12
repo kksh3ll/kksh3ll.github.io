@@ -1,8 +1,8 @@
 ---
 layout: post
 title: PSI Elements
-data: 2018-04-01
-categories: Java
+date: 2018-04-01
+categories: [Java]
 ---
 
 ## PSI file

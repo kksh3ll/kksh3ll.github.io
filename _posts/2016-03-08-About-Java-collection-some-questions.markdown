@@ -2,7 +2,7 @@
 layout: post
 title:  "关于Java集合的几个常见问题"
 date:   2016-03-08 20:26:05
-categories: Java update
+categories: [Java]
 ---
 
 列出几个集合常见的问题

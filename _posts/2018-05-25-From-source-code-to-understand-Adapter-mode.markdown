@@ -2,7 +2,7 @@
 layout: post
 title: 从相关代码认识适配器模式
 date: 2018-05-25
-categories: Java
+categories: [Java]
 ---
 
 ## 适配器模式特点

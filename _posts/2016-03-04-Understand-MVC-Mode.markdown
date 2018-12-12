@@ -2,7 +2,7 @@
 layout: post
 title:  理解MVC模式及入门
 date:   2016-03-04 20:12:34
-categories: Web
+categories: [web]
 ---
 ## MVC模式的发展
 1. 在早期的web应用中，JSP负责处理业务逻辑、控制网页流程并创建HTML页面。这样就造成了可维护性差、调试困难HTML和Java程序代码强耦合在一起。为了解决这些问题，SUN公司设计制定了`Model2`设计模式。`Model2`中用JSP技术实现了视图的功能、用`Servlet`技术实现了控制器的功能、用JavaBean实现了模型的功能。

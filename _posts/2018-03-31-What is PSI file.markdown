@@ -1,8 +1,8 @@
 ---
 layout: post
 title: What is PSI file
-data: 2018-03-31
-categories: Java
+date: 2018-03-31
+categories: [Java]
 ---
 
 ## PSI file

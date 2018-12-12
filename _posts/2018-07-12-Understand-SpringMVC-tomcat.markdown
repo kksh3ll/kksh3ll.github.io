@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 看透SpringMVC阅读笔记-tomcat中间件
-data: 2018-06-26
-categories: Java
+date: 2018-06-26
+categories: [Java]
 ---
 
 ## Tomcat的顶层结构

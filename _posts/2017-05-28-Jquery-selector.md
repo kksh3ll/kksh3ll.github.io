@@ -3,7 +3,7 @@ layout: post
 title: Jquery的选择器
 contributor: kksh3ll
 date: 2017-05-28
-categories: jquery
+categories: [jquery]
 ---
 
 ## Jquery 的选择器的总结

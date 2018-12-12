@@ -2,7 +2,7 @@
 layout: post
 title : 使用Mybatis-generator生成底层代码时遇到的问题
 date  : 2017-04-11 13:14:29
-categories: Java 
+categories: [Java] 
 ---
 
 使用springMVC和Mybatis框架开发的时候，实际项目中往往会根据数据库来生成相应的配置文件和底层代码。Mybatis官方推出了自动化工具。

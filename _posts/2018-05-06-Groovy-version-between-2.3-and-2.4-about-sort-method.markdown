@@ -2,7 +2,7 @@
 layout: post
 title: Groovy版本2.3和2.4之间sort方法的一些差异
 date: 2018-05-06
-categories: Groovy
+categories: [Groovy]
 ---
 
 ## 起因

@@ -2,7 +2,7 @@
 layout: post
 title:  HashMap的工作原理
 date:   2016-03-11 20:19:29
-categories: Java update
+categories: [Java]
 ---
 ## 官方描述
 Hash table based implementation of the Map interface. This

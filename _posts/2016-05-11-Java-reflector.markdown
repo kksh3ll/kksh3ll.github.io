@@ -2,7 +2,7 @@
 layout: post
 title:  Java的反射机制
 date:   2016-05-11 20:23:12
-categories: Java update
+categories: [Java]
 ---
 
 ### 反射机制的原理

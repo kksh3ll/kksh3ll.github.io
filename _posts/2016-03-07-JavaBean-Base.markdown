@@ -2,7 +2,7 @@
 layout: post
 title:  JavaBean的基础知识
 date:   2016-03-07
-categories: Web
+categories: [web]
 ---
 ## 简介
 

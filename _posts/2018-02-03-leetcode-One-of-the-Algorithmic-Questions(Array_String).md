@@ -2,7 +2,7 @@
 layout: post
 title: 【Array/String】leetcode算法题之一
 date: 2017-06-03
-categories: Java
+categories: [Java]
 ---
 
 ## 问题

@@ -2,7 +2,7 @@
 layout: post
 title:  Linux下修改grub修复对Windows7的引导
 date:   2015-03-17 16:44:21
-categories: Linux
+categories: [Linux]
 ---
 ## Linux下修改grub
 
