@@ -1,12 +1,49 @@
-# Site settings
 title: 稻谷丰收
-email: kksh3ll@gmail.com
-description: "喜欢读书，编程，禅修。"
-baseurl: ""
-url: "http://kksh3ll.github.io"
+description: My Personal Blog
+author: 稻花香
+github: https://github.com/kksh3ll
+about: 软件开发，喜欢读书，编程，禅修
+avatar_url: /static/img/avatar.jpg
 
-# Build settings
+enableTags: true
+tagarray: []
+
+collections:
+  project:
+    output: true
+    permalink: /project/:path/
+
+social:
+    - icon: fa-twitter
+      link: "https://twitter.com/dhx007"
+    - icon: fa-github
+      link: "https://github.com/kksh3ll"
+
+share:
+  twitter_username: agusmakmun6
+  fb_appid: 1749788565247320
+
+urls:
+    - text: About Me
+      url: /about/
+    - text: My Projects
+      url: /projects/
+    - text: Feed
+      url: /feed.xml
+
+url: "https://kksh3ll.github.io"
+baseurl: ""
+paginate: 20
+per_page: 10
+paginate_path: "/page/:num/"
 markdown: kramdown
-permalink: pretty
-paginate: 10
-paginate_path: "/blog/page/:num"
+gems:
+  - jekyll-paginate
+  - jekyll-gist
+
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: ['development']

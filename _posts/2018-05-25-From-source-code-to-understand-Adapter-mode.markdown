@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 从相关代码认识适配器模式
-data: 2018-05-25
+date: 2018-05-25
 categories: Java
 ---
 

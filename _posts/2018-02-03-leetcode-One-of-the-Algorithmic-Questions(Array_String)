@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 【Array/String】leetcode算法题之一
-data: 2017-06-03
+date: 2017-06-03
 categories: Java
 ---
 
@@ -42,4 +42,3 @@ public int[]twoSum(int[] numbers, int target) {
 1. 高手的解答真是让菜鸟我捉摸不透，返回的数组怎么保证前一比后一小呢？
 
 2. 万一俩个数是相等的，Hash table貌似不太适合
-

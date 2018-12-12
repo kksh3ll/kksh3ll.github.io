@@ -1,11 +1,18 @@
 ---
 layout: page
-title: 关于我
+title: About
 permalink: /about/
 ---
 
-这是个个人技术文章分享博客。 你可以在这里阅读一些相关的文章以及一些新闻等， 主页的链接地址是： [kksh3ll.github.io](http://kksh3ll.github.io/)
+这是一个个人软件开发技术文章分享的博客. 你可以在这里阅读和查找一些相关的文章等， 主页的链接地址是：kksh3ll.github.io, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
 
-我的GitHub博客主页: [github.com/kksh3ll/kksh3ll.github.io](https://github.com/kksh3ll/kksh3ll.github.io)
+You can find the source code for Minima at GitHub:
+[jekyll][jekyll-organization] /
+[minima](https://github.com/jekyll/minima)
 
-我的GitHub个人主页地址： [github.com/kksh3ll](https://github.com/kksh3ll)
+You can find the source code for Jekyll at GitHub:
+[jekyll][jekyll-organization] /
+[jekyll](https://github.com/jekyll/jekyll)
+
+
+[jekyll-organization]: https://github.com/jekyll

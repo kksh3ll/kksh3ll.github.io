@@ -2,7 +2,7 @@
 layout: post
 title: Jquery的选择器
 contributor: kksh3ll
-data: 2017-05-28
+date: 2017-05-28
 categories: jquery
 ---
 
