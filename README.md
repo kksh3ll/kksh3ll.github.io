@@ -1,6 +1,7 @@
 **稻谷丰收**
 
->此项目是从一个jekyll驱动的GitHub Page博客项目[My Stack Problems](https://github.com/agusmakmun/agusmakmun.github.io)fork过来的，>项目中的搜索模块是 [Super Search](https://github.com/chinchang/super-search)提供。
+>此项目是从一个jekyll驱动的GitHub Page博客项目 [My Stack Problems](https://github.com/agusmakmun/agusmakmun.github.io) fork过来的，
+>项目中的搜索模块是 [Super Search](https://github.com/chinchang/super-search) 提供。
 
 ### 演示
 * [https://kksh3ll.github.io](https://kksh3ll.github.io)
@@ -22,19 +23,19 @@
 
 ### 安装配置
 
-1. Fork this repository
-2. Edit site settings inside file of `_config.yml`
-3. Edit your projects at file of `projects.md`, `_data/projects.json` and inside path of `_project/` _(for detail project)_.
-4. Edit about yourself inside file of `about.md`
+1. Fork 项目
+2. 编辑设置 `_config.yml`
+3. 编辑项目文件 `projects.md`, `_data/projects.json`
+4. 编辑 `about.md` 文件
 
 ### 新建文章
 
-**a. Add new Category**
+**a. 新建 Category**
 
-All categories saved inside path of `category/`, you can see the existed categories.
+在 `category/`文件夹新建文章对应的分类文件, 可参照其中的分类文件
 
-**b. Add new Posts**
+**b. 新建 post 文件**
 
-* All posts bassed on markdown syntax _(please googling)_. allowed extensions is `*.markdown` or `*.md`.
-* This files can found at the path of `_posts/`.
-* and the name of files are following `<date:%Y-%m-%d>-<slug>.<extension>`, for example:
+* 所有文章遵照markdown格式书写，文件后缀必须为 `*.markdown` 或者 `*.md`
+* 文章放在 `_posts/` 文件夹下
+* 文件名遵照 `<date:%Y-%m-%d>-<slug>.<extension>` 格式命名
