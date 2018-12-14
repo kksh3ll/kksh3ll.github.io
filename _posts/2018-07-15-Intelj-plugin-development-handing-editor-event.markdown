@@ -11,7 +11,7 @@ categories: [Java, intellij]
 
 #### 2. 实现处理击键的逻辑
 
-> execute方法包含主要的击键后的处理逻辑，每一次键被压下去都会被调用。
+> `execute`方法包含主要的击键后的处理逻辑，每一次键被压下去都会被调用。
 
 {% highlight Java %}
 public class MyTypedHandler implements TypedActionHandler {
@@ -30,9 +30,9 @@ public class MyTypedHandler implements TypedActionHandler {
 }
 {% endhighlight %}
 
-#### 3. 设置TypedActionHandler
+#### 3. 设置`TypedActionHandler`
 
-> 通过TypedActionHandler setupHandler(TypedActionHandler handler)方法创建一个实例，替换原有的TypedActionHandler类。
+> 通过`TypedActionHandler setupHandler(TypedActionHandler handler)`方法创建一个实例，替换原有的`TypedActionHandler`类。
 
 {% highlight Java %}
 public class EditorIllustration extends AnAction {
@@ -44,11 +44,11 @@ public class EditorIllustration extends AnAction {
 }
 {% endhighlight %}
 
-### 使用EditorActionHandler类（Working with EditorActionHandler）
+### 使用`EditorActionHandler`类（Working with EditorActionHandler）
 
-> EditorActionHandler类用在编辑器击键动作后，然后获取EditorActionManager类并通过它执行操作。下面例子使用EditorActionHandler类在当前字符后插入额外的字符。
+> `EditorActionHandler`类用在编辑器击键动作后，然后获取EditorActionManager类并通过它执行操作。下面例子使用`EditorActionHandler`类在当前字符后插入额外的字符。
 
-#### 1. 创建Action并在plugin.xml中注册
+#### 1. 创建`Action`并在`plugin.xml`中注册
 
 {% highlight Java %}
 public class EditorHandlerIllustration extends AnAction {
@@ -72,7 +72,7 @@ public class EditorHandlerIllustration extends AnAction {
 
 #### 2. 设置可用性（visiblity）
 
-> Action只有在项目打开、编辑器可编辑、在编辑器至少有一个活动字符情况下成立。
+> `Action`只有在项目打开、编辑器可编辑、在编辑器至少有一个活动字符情况下成立。
 
 {% highlight Java %}
 public class EditorHandlerIllustration extends AnAction {
@@ -88,9 +88,9 @@ public class EditorHandlerIllustration extends AnAction {
 }
 {% endhighlight %}
 
-#### 3. 获取EditorActionHandler类
+#### 3. 获取`EditorActionHandler`类
 
-> 在标准的编辑器定制action，首先需要为action获取EditorActionHandler实例，比如CloneCaretActionHandler实例
+> 在标准的编辑器定制`action`，首先需要为`action`获取`EditorActionHandler`实例，比如`CloneCaretActionHandler`实例
 
 {% highlight Java %}
 public class EditorHandlerIllustration extends AnAction {
@@ -107,10 +107,10 @@ public class EditorHandlerIllustration extends AnAction {
 }
 {% endhighlight %}
 
-#### 4. 通过EditorActionHandler执行action
+#### 4. 通过`EditorActionHandler`执行`action`
 
 > 为了执行Action我们需要调用EditorActionHandler类中对用的execute方法。
-public final void execute(@NotNull Editor editor, @Nullable final Caret contextCaret, final DataContext dataContext)
+> `public final void execute(@NotNull Editor editor, @Nullable final Caret contextCaret, final DataContext dataContext)`
 
 {% highlight Java %}
 public class EditorHandlerIllustration extends AnAction {
