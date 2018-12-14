@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Intelj插件开发-处理编辑器事件（Handling Editor Events）
+title: "Intelj插件开发-处理编辑器事件（Handling Editor Events）"
 date: 2018-07-15
 categories: [Java, intellij]
 ---
