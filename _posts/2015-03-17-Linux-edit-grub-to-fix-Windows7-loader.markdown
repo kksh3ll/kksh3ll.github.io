@@ -6,7 +6,7 @@ categories: [Linux]
 ---
 ## Linux下修改grub
 
-进入Linux系统中，在终端中输入：`sudo vi /boot/grub/grub.cfg`回车，输入root密码，打开`grub.cfg`文件。在文件的末尾找到`### BEGIN ／etcgrub.d/40_custom ###`代码段：在下面加入如下代码：
+进入Linux系统中，在终端中输入：`sudo vi /boot/grub/grub.cfg`回车，输入root密码，打开`grub.cfg`文件。在文件的末尾找到`### BEGIN ／etc/grub.d/40_custom ###`代码段：在下面加入如下代码：
 
 {% highlight shell %}
 memuentry "Windows7" {
