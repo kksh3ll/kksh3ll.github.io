@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "编译Linux内核"
+title: "linux内核启动分析－实模式跳转"
 date: 2020-03-01
 categories: [Linux]
 ---
