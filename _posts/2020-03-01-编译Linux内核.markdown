@@ -1,0 +1,22 @@
+---
+layout: post
+title: "编译Linux内核"
+date: 2020-03-01
+categories: [Linux]
+---
+
+## 下载Linux内核源代码
+
+* 下载内核源代码，kernel.org下载太慢，选择清华开源站下载最新内核源码．
+
+* 解压xz文件包：`tar Jxvf linux-5.5.7.tar.xz`.
+
+* 切换到内核目录下：`cd linux-5.5.7`．
+
+## 配置编译内核
+
+* 内核功能选项全部为否：`make allnoconfig`．
+
+## 编译内核
+
+* 编译内核：`make`．
