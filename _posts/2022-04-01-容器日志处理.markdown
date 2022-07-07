@@ -1,0 +1,22 @@
+---
+layout: post
+title: "容器日志处理"
+date: 2020-03-01
+categories: [Linux]
+---
+
+## JSON文件日志记录
+
+默认情况，Docker 会捕获所有容器的标准输出（和标准错误），并使用 JSON 格式将它们写入文件中。`daemon.json`文件位于`/etc/docker/`目录下。
+
+以下示例将日志驱动程序设置为json-file并设置max-size 和max-file选项以启用自动日志轮换
+```json
+{
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "10m",
+    "max-file": "3" 
+  }
+}
+
+```
