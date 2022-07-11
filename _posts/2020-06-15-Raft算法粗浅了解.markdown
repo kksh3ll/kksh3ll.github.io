@@ -128,7 +128,7 @@ leader完整性：如果一个log entry在某个任期被提交（committed）�
 
 ## Corner case
 
-## State Machine Safety
+### State Machine Safety
 
 如果节点将某一位置的log entry应用到了状态机，那么其他节点在同一位置不能应用不同的日志。简单点来说，所有节点在同一位置（index in log entries）应该应用同样的日志。但是似乎有某些情况会违背这个原则：
 
@@ -142,4 +142,4 @@ leader完整性：如果一个log entry在某个任期被提交（committed）�
 
 因此，在上图中，不会出现（C）时刻的情况，即term4任期的leader s1不会复制term2的日志到s3。而是如同(e)描述的情况，通过复制-提交 term4的日志顺便提交term2的日志。如果term4的日志提交成功，那么term2的日志也一定提交成功，此时即使s1crash，s5也不会重新当选。
 
-
+[一文搞懂Raft算法]:    https://www.cnblogs.com/xybaby/p/10124083.html
