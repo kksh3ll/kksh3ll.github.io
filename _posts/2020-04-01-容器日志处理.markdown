@@ -19,3 +19,4 @@ categories: [docker]
   }
 }
 ```
+这些日志文件在宿主机的 /var/lib/docker/containers/ 文件夹下，以这样的形式命名：`/var/lib/docker/containers/containerID-json.log`。

@@ -1,0 +1,123 @@
+---
+layout: post
+title: "Redis双主方案调研"
+date: 2020-06-15
+categories: [Linux]
+---
+
+> 一碗酸辣汤，耳闻口讲的，总不如亲自呷一口的明白
+
+## Dynomite代理解决方案
+
+Redis官方社区版本不支持master-master双主， 仅适用于 Redis 实验室企业版 Redis，开源的redis集群中进行双主，目前有Netflix开源的Dynomite工具可供选择。Dynomite可以为Redis和Memcached提供支持，支持多数据中心副本和高可用。
+
+Dynomite和redis组成一组Dynomite node，Dynomite相当于中间层代理处理redis读写等操作。在数据副本复制方面的原理是Dynomite代理在发送写入流量时可以连接到 Dynomite 集群上的任何节点。如果 Dynomite 节点拥有基于其令牌的数据，则数据将写入本地数据存储服务器进程并异步复制到集群中所有节点。
+
+Dynomite 将最终一致性扩展到本地区域的可调一致性。一致性级别指定在将数据返回到客户端应用程序之前必须有多少副本响应写入/读取请求。可以配置读写一致性来管理可用性与数据准确性。集群范围内可以为读取或写入操作单独配置一致性。
+
+### Dynomite和Redis部署
+
+Redis的部署和之前的部署保持一致，两节点的配置保持一致，模式都为master。密码认证取消（Dynomite不支持AUTH指令）
+
+![img](/img/redis-202007231.png)
+![img](/img/redis-202007232.png)
+
+避免和环境正常redis端口冲突设置为6879
+Dynomite的部署需要添加配置文件和网络设置为host，开启7379和8379端口即可。
+
+![img](/img/redis-202007233.png)
+![img](/img/redis-202007234.png)
+
+配置文件dyn.yaml
+
+```yaml
+dyn_o_mite:
+  datacenter: dc-a
+  rack: rack1
+  dyn_listen: 192.168.54.227:7379
+  dyn_seeds:
+  - 192.168.54.203:7379:rack1:dc-b:0
+  listen: 0.0.0.0:8379
+  servers:
+  - 127.0.0.1:6879:1
+  tokens: '0'
+  secure_server_option: datacenter
+  data_store: 0
+  stats_listen: 127.0.0.1:22222
+  read_consistency : DC_QUORUM
+  write_consistency : DC_QUORUM
+```
+
+### 部署验证
+
+部署完成，连接双主redis的代理dynomite端口8379，对其中redis进行写入和查询验证。
+
+![img](/img/redis-202007235.png)
+![img](/img/redis-202007236.png)
+
+### 性能测试
+
+根据官网benchmark，单个数据中心测试的结果，Dynomite 节点平均和中值延迟值表明 Dynomite 可以为客户端应用程序提供亚毫秒级延迟，因为它可以扩展到更多的节点，从而提高吞吐量。
+
+### Redis部分命令不兼容
+
+AUTH命令不支持，实际生产环境安全性较差。
+
+[详细]:    https://github.com/Netflix/dynomite/blob/dev/notes/redis.md
+
+## KeyDB解决方案
+
+KeyDB是高性能的开源数据库，与 Redis API、模块和协议保持完全兼容，KeyDB 致力于保持与上游 Redis 代码库中的功能和更新的一致性，无需进行任何修改就可以使用。
+KeyDB支持双主和多主模式。
+
+### KeyDB部署
+
+编配：（模式选择都为master）
+
+```yaml
+version: "3.6"
+services:
+    keydb1:
+        environment:
+            ALLOW_EMPTY_PASSWORD: "yes"
+            DISABLE_COMMANDS: FLUSHDB,FLUSHALL,CONFIG
+            REDIS_MASTER_HOST: 192.168.54.227
+            REDIS_MASTER_PASSWORD: passwd
+            REDIS_MASTER_PORT_NUMBER: "6379"
+            REDIS_REPLICA_IP: 192.168.54.227
+            REDIS_REPLICATION_MODE: master
+            TZ: Asia/Shanghai
+        image: eqalpha/keydb:latest
+        extra_hosts: []
+        deploy:
+            mode: replicated
+            replicas: 1
+            placement:
+                constraints:
+                    - node.labels.hostname==manager
+            resources:
+                limits:
+                    memory: 1024M
+        networks:
+            bms-network: null
+            oms-network: null
+        configs:
+            - source: keydb1.conf
+              target: /etc/keydb/keydb.conf
+        ports:
+            - mode: host
+              protocol: tcp
+              published: 6379
+              target: 6379
+networks:
+    bms-network:
+        external: true
+        name: bms-network
+    oms-network:
+        external: true
+        name: oms-network
+configs:
+    keydb1.conf:
+        external: true
+        name: keydb1.conf
+```
