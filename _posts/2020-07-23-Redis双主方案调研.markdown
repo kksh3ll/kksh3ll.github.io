@@ -22,7 +22,8 @@ Redis的部署和之前的部署保持一致，两节点的配置保持一致，
 ![img](/img/redis-202007231.png)
 ![img](/img/redis-202007232.png)
 
-避免和环境正常redis端口冲突设置为6879
+避免和环境正常redis端口冲突设置为6879。
+
 Dynomite的部署需要添加配置文件和网络设置为host，开启7379和8379端口即可。
 
 ![img](/img/redis-202007233.png)
@@ -63,7 +64,8 @@ dyn_o_mite:
 
 AUTH命令不支持，实际生产环境安全性较差。
 
-[详细]:    https://github.com/Netflix/dynomite/blob/dev/notes/redis.md
+[详细][redis.md]
+[redis.md]:    https://github.com/Netflix/dynomite/blob/dev/notes/redis.md
 
 ## KeyDB解决方案
 
