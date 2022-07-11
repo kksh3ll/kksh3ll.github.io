@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "容器日志处理"
-date: 2020-03-01
-categories: [Linux]
+date: 2020-04-01
+categories: [docker]
 ---
 
 ## JSON文件日志记录
@@ -18,5 +18,4 @@ categories: [Linux]
     "max-file": "3" 
   }
 }
-
 ```
