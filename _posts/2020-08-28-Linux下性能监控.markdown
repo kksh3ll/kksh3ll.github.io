@@ -1,0 +1,44 @@
+---
+layout: post
+title: "Linux下性能监控"
+date: 2020-08-28
+categories: [Linux]
+---
+
+> 
+
+## 性能工具安装和使用
+
+
+* sysstat包安装，`yum -y install iotop`，一般如下的几个命令可以使用：
+  
+  sar、iostat、sa1、sa2、sadf、mpstat、sadc、sysstat
+
+* sar工具的使用：
+  
+  * 查看内存使用情况 sar -r 2 3    //每隔2秒，显示3次，内存使用的情况
+    
+    ![](/img/2022-03-21-10-16-44-image.png)
+  
+  * 查看I/O传输速率统计信息 sar -b 2 3
+    
+    ![](/img/2022-03-21-10-18-59-image.png)
+
+* iotop是进程级别的监控工具，使用`yum -y install iotop`命令进行安装：
+  
+  * 使用非交互模式将iotop命令输出信息写入日志：`nohup iotop -b -o -n 10 -d 5 -t > /tmp/iotop.log &`
+  
+  * | **参数**  | **长参数**       | **参数描述**                              |
+    | ------- | ------------- | ------------------------------------- |
+    | -v      | --version     | 显示版本号                                 |
+    | -h      | --help        | 显示帮助信息                                |
+    | -o      | --only        | 只显示正在产生I/O的进程或线程，运行过程中，可以通过按o随时切换     |
+    | -b      | --batch       | 非交互模式下运行，一般用来记录日志。                    |
+    | -n NUM  | --iter=NUM    | 设置监控（显示）NUM次，主要用于非交互模式。默认无限           |
+    | -d SEC  | --delay=SEC   | 设置显示的间隔秒数，支持非整数                       |
+    | -p PID  | --pid=PID     | 只显示指定进程（PID）的信息                       |
+    | -u USER | --user=USER   | 显示指定的用户的进程的信息                         |
+    | -P      | --processes   | 只显示进程，不显示所有线程                         |
+    | -a      | --accumulated | 累积的I/O,显示从iotop启动后每个进程累积的I/O总数，便于诊断问题 |
+    | -k      | --kilobytes   | 显示使用KB单位                              |
+    | -t      | --time        | 非交互模式下，加上时间戳。                         |
