@@ -1,0 +1,28 @@
+---
+layout: post
+title: "map多线程读写导致程序panic"
+date: 2020-10-05
+categories: [Linux]
+---
+
+> 
+
+## 报错
+
+开发过程中看到一个error导致了程序崩溃`fatal error: concurrent map iteration and map write.`
+
+开启多个协程，同时对map进行了遍历和写操作，导致的崩溃。然后通过对代码进行检查，发现了确实有一处地方，没有对遍历map的操作加锁，导致了这个问题。
+
+* Lock 通过获取锁一次只能执行一次常规例程读/写
+
+* RLock 通过获取锁，多次执行例程可以一次读取
+
+* 当一个goroutine已经获取了一个RLock时，另一个goroutine要获取Lock进行写入，必须等到RUnlock
+
+* 当一个goroutine已经为map获取Lock时，其他goroutine将不得不等到释放锁Unlock
+
+* RWMutex是读取/写入互斥锁。锁可以由任意数量的读取或单个写入持有。 RWMutex的零值是未锁定的互斥锁
+
+* 如果goroutine拥有RWMutex进行读取，而另一个goroutine可能会调用Lock，则在释放初始读取锁之前，任何goroutine都不应期望能够获取读取锁。特别是，这禁止了递归读取锁定。这是为了确保锁最终可用。锁定的锁定呼叫被阻止，使新读者无法获得锁定
+
+
